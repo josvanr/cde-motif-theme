@@ -1,0 +1,9 @@
+[Desktop Entry]
+Type=X-GNOME-Metatheme
+Name=CDE Theme
+Comment=An elegant theme from a more civilized age
+Encoding=UTF-8
+
+[X-GNOME-Metatheme]
+GtkTheme=CDE Theme
+ButtonLayout=close,minimize,maximize:menu

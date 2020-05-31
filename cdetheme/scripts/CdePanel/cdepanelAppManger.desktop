@@ -1,0 +1,9 @@
+#[Desktop Entry]
+#Name=CdePanel App Manager/ Applications
+#Exec=thunar /usr/share/applications
+#Icon=Thunar
+#Terminal=false
+#StartupNotify=true
+#Type=Application
+#Categories=System;Utility;Core;FileTools;FileManager;
+        

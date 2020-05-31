@@ -1,0 +1,6 @@
+pyinstaller -F cdetheme/scripts/cdepanel.py --add-data cdetheme:cdetheme
+cp dist/cdepanel .
+rm -r dist
+rm -r build
+rm cdepanel.spec
+

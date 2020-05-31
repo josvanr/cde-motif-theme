@@ -1,0 +1,68 @@
+#!/usr/bin/python
+#pixmap from text
+import signal
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+import os,sys
+from PyQt4 import QtGui
+from PyQt4.QtGui import *
+from PyQt4.QtCore import *
+from pprint import pprint
+from ExtractXpm import extractXpm
+import re
+import subprocess
+
+
+#READ BG_COLOR_1 #ABABAB PAIRS INTO LIST
+#colors[0..7][0]=bg_color_1
+#colors[0..7][1]=#ababab
+def readMotifColors(filename=''):
+    colors=[]
+    cmd='./motifcolors '+filename
+    output = subprocess.check_output(cmd, shell=True)
+    lines=output.splitlines() #array with elements=lines
+    for c in lines:
+        x=c.split(' ') #array with pair [bg_color_1, #abababa]
+        colors.append(x) #2d array with all colors
+    return colors
+
+#take python 
+def replaceColors(colors,xpm1):
+    rows=len(colors)
+    xpm=list(xpm1) #make a copy of the list and make replacements in that, return that
+    for row in range(rows):
+        colorname=colors[row][0]
+        colorval=colors[row][1]
+        for j in range(len(xpm)):
+            if re.search(colorname,xpm[j]):
+                xpm[j]=re.sub('#(?:[0-9a-fA-F]{3}){1,2}',colorval,xpm[j]) #take xpm[j] and replace colorname with colorval and return string
+                print xpm[j]
+    return xpm
+
+
+    colors=readMotifColors('PBNJ.dp')
+    #pprint (colors)
+
+    xpm=extractXpm('xpm/handle-left-middle.xpm')
+    xpm1=replaceColors(colors,xpm)
+
+    app = QApplication(sys.argv)
+    window = QMainWindow()
+
+    pic = QLabel(window)
+
+    #########################
+    pixmap=QPixmap(xpm) #the original one
+    #pixmap=QPixmap(xpm1) #the replaced one
+    #########################
+
+    pic.setPixmap(pixmap)
+    pic.resize(200,100)
+
+
+
+
+    window.show()
+    sys.exit(app.exec_())
+
+
+

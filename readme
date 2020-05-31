@@ -1,0 +1,13 @@
+Stand alone theme: 
+	copy 'cdetheme' to ~/.themes and pick the theme in your settings
+
+'cdetheme-solaris' is just a copy of 'cdetheme' but with colors set to
+the farmiliar purplish seen in many cde themes. (Color palette Crimson.dp
+set to '4 colors')
+
+Cde front panel app: 
+	run 'cdepanel'
+
+More info see: 
+	cdetheme/readme 
+	cdetheme/scripts/readme.txt

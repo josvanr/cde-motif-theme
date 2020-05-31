@@ -1,0 +1,4 @@
+#pyinstaller -F -n cdepanel CdePanel.py --add-data cdepanel:cdepanel
+pyinstaller -F cdepanel.py --add-data CdePanel:CdePanel
+cp dist/cdepanel .
+#pyinstaller -F cdepanel.py --add-data CdePanel:CdePanel

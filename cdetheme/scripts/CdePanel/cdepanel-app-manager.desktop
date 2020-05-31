@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=App Finder
+Exec=xfce4-appfinder /usr/share/applications
+Icon=edit-find
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=System;Utility;Core;FileTools;FileManager;
+        

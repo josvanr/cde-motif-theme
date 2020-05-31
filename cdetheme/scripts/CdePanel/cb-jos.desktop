@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=CB .jos
+Exec=cb .jos
+Icon=google-chrome
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=System;Utility;Core;GTK;FileTools;FileManager;
+

@@ -1,0 +1,24 @@
+antialias: 21
+brightness: 0
+contrast: 0
+currentpalettefile: Broica.dp
+defaultworkspacecolor: 2
+environment: xfce
+initialheight: 103.1
+internalborderwidth: 3
+internaltitleheight: 18
+ncolors: 8
+nworkspaces: 6
+palettedir: palettes
+panelcolor: 8
+pycdeconfig: pycdeconfig
+saturation: 1.0
+scale: 1.1403931925618036
+sharp: 2.1000000000000005
+themeBackdrops: xfce
+themeGtk: true
+themeWindecs: xfce
+workspacebackdrops: [Gradient, Gradient, Gradient, WaterDrops, Paver, Gradient, Paver,
+  Gradient, Gradient]
+workspacecolors: [0, 3, 5, 6, 7, 3, 2, 2, 2, 2, 2]
+workspacelabels: [Zero, One, Two, Three, Four, Five, Six, Seven]

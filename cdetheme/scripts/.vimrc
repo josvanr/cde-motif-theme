@@ -1,0 +1,19 @@
+autocmd BufEnter Drawer.py map c :!./cdepanel.py<cr>
+autocmd BufEnter PicButton.py map c :!./cdepanel.py<cr>
+autocmd BufEnter PicButtonToggle.py map c :!./cdepanel.py<cr>
+autocmd BufEnter VBox.py map c :!./cdepanel.py<cr>
+autocmd BufEnter WorkspaceFuncs.py map c :!./cdepanel.py<cr>
+autocmd BufEnter PicButtonCommand.py map c :!./cdepanel.py<cr>
+autocmd BufEnter ColorFun.py map c :!./cdepanel.py<cr>
+autocmd BufEnter Globals.py map c :!./cdepanel.py<cr>
+autocmd BufEnter JosQPainter.py map c :!./cdepanel.py<cr>
+autocmd BufEnter ColorDialog.py map c :!./cdepanel.py<cr>
+autocmd BufEnter motifcolors map c :!./cdepanel.py<cr>
+autocmd BufEnter readme map c :!./cdepanel.py<cr>
+autocmd BufEnter ThemeXfce.py map c :!./cdepanel.py<cr>
+autocmd BufEnter Opts.py map c :!./cdepanel.py<cr>
+autocmd BufEnter MiscFun.py map c :!./cdepanel.py<cr>
+autocmd BufEnter MotifColors.py map c :!./cdepanel.py<cr>
+autocmd BufEnter Theme.py map c :!./cdepanel.py<cr>
+autocmd BufEnter ThemeBackdrops.py map c :!./cdepanel.py<cr>
+"autocmd BufEnter MotifColors.py map c :!./MotifColors.py /home/jos/.themes/cdetheme/palettes/Broica.dp 8<cr>

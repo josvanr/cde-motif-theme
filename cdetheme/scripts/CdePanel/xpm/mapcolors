@@ -1,0 +1,69 @@
+#!/usr/bin/python
+#pixmap from text
+import signal
+signal.signal(signal.SIGINT, signal.SIG_DFL)
+import os,sys
+from PyQt4 import QtGui
+from PyQt4.QtGui import *
+from PyQt4.QtCore import *
+from pprint import pprint
+import re
+import subprocess
+
+#see file ./colormap
+#every color should only once be in colormap
+#see ./readme
+
+#DEZE #DEZE #DEZE #DEZE #DEZE #DEZE #DEZE #DEZE #DEZE #DEZE
+
+colormap=[]
+f = open('colormap', 'r')
+lines = f.read().splitlines()  #splitlines to avoid newlines
+f.close()
+for c in lines:
+    x=c.split(' ') #array with pair [bg_color_1, #abababa]
+    colormap.append(x) #2d array with all colors
+
+#print len(colors)
+#print colors[4][1]
+
+#xpmsrc the original xpms without color codes in them
+cmd='ls xpmsrc/*.xpm|xargs -n 1 basename' #only filename no path
+output = subprocess.check_output(cmd, shell=True)
+xpmfiles=output.splitlines() #array with elements=lines
+
+for xpmfile in xpmfiles:
+    fileandpath='xpmsrc/'+xpmfile
+    f = open(fileandpath, 'r')
+    xpmfilestr = f.read()
+    f.close()
+    rows=len(colormap)
+    for row in range(rows):
+        #DDDDDD ts_color_4 pairs 
+        colorval=colormap[row][0]
+        colorname=colormap[row][1]
+        #replace #DDDDDD -> #DDDDDD s ts_color_2 etc
+        #xpmfilestr=re.sub(colorval,colorval+' s '+colorname,xpmfilestr) 
+        xpmfilestr=re.sub(colorval+'"',colorval+' s '+colorname+'"',xpmfilestr) 
+    #write changed files to xpmdest directory
+    fileandpath='xpmdest/'+xpmfile
+    print fileandpath
+    f = open(fileandpath, 'w')
+    f.write(xpmfilestr)
+    f.close()
+
+
+#".	c #999999",
+
+#".	c #999999 s #999999",
+
+
+
+
+
+
+
+
+
+
+

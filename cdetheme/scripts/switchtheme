@@ -1,0 +1,107 @@
+#!/usr/bin/python
+import os
+import sys
+import shutil
+from PyQt4 import QtCore, QtGui
+import XfceDecor 
+import Globals
+from Theme import Theme
+from Opts import Opts
+from MotifColors import readMotifColors2
+
+#    ./switchtheme.py paletteFile nrOfColors borderWidth titleHeight useWindowDecorations useGtkTheme useBackDrops
+# Examples
+#    ./switchtheme ../palettes/Broica.dp 8 5 18 true true true 
+#    ./switchtheme ../palettes/Crimson.dp 8 3 20 true true true 
+
+switchtheme="""
+
+The generated theme files should be applied automatically if you are 
+using xfce. If not, try and go into xfce settings/appearance, and 
+switch to 'cdetheme'. For the window decorations: go into xfce 
+settings/window manager/theme and choose 'cdetheme'. In gnome you 
+need gnome-tweaks with the 'usertheme' extension.
+
+For this script to work you need to install the pyqt4 modules. Eg on 
+ubuntu something like:
+
+sudo apt install python-qt4 
+
+    """
+
+helptxt="""
+Generate gtk2 and gtk3 theme, xfce window decorations and
+xfce backdrops  in style of CDE/Motif
+
+Directory 'cdetheme' should be copied to ~/.themes/cdetheme
+
+Usage:
+
+   switchtheme paletteFile nrOfColors borderWidth titleHeight useWindowDecorations useGtkTheme useBackDrops
+
+Arguments:
+
+    palette file (CDE color palettes, are located in ~/.themes/cdetheme/palettes)
+    number of colors: 8 or 4 (This used to be an option in CDE. 4 Gives a reduced version)
+    border width of xfce window decorations
+    title height of xfce window decorations
+    use/apply xfce window decorations (true/false)
+    use/apply gtk theme (true/false)
+    use/apply xfce backdrops (true/false)
+
+Examples:
+
+    ('HPUnix style')
+       ./switchtheme ../palettes/Broica.dp 8 3 22 true true true 
+    ('Solaris style')
+       ./switchtheme ../palettes/Crimson.dp 4 3 20 true true true 
+
+    """+switchtheme
+
+
+if len(sys.argv)!=8:
+    print helptxt
+    sys.exit()
+
+app = QtGui.QApplication(sys.argv)
+
+opts=Opts()
+
+currentpalettefilefullpath=sys.argv[1]
+opts.ncolors=int(sys.argv[2])
+opts.internalborderwidth=int(sys.argv[3])
+opts.internaltitleheight=int(sys.argv[4])
+
+opts.themeWindecs=''
+if sys.argv[5]=='true':
+    opts.themeWindecs='xfce'
+opts.themeGtk=False
+if sys.argv[6]=='true':
+    opts.themeGtk=True
+opts.themeBackdrops=''
+if sys.argv[7]=='true':
+    opts.themeBackdrops='xfce'
+
+opts.currentpalettefile=os.path.basename(currentpalettefilefullpath)
+
+opts.nworkspaces=4
+opts.workspacecolors=[0, 8, 5, 6, 7, 2, 2, 2, 2, 2, 2]
+opts.workspacebackdrops=['Gradient', 'Paver', 'Gradient', 'WaterDrops', 'Gradient', 'Gradient', 'Gradient', 'Gradient']
+opts.ncolors=8
+opts.nworkspaces=6
+
+userhome=os.path.expanduser("~")
+Globals.themedir=os.path.join(userhome,'.themes','cdetheme')
+Globals.themesrcdir=Globals.themedir
+Globals.backdropdir=os.path.join(Globals.themedir,'backdrops')
+Globals.palettedir=os.path.join(Globals.themedir,'palettes')
+
+theme=Theme(opts)
+Globals.colorshash=readMotifColors2(opts.ncolors,currentpalettefilefullpath)
+theme.initTheme()
+theme.updateThemeNow()
+
+
+
+
+

@@ -1,0 +1,11 @@
+clock
+/usr/share/applications/xfce4-terminal.desktop TerminalEmulator
+/usr/share/applications/gucharmap.desktop Utilities
+/usr/share/applications/firefox.desktop Internet
+/usr/share/applications/pavucontrol.desktop Mixer
+workspacebuttons
+/usr/share/applications/gimp.desktop Graphics
+/usr/share/applications/libreoffice-base.desktop FileManager
+/usr/share/applications/xfce-ui-settings.desktop Settings
+/usr/share/applications/system-config-printer.desktop Settings
+/usr/share/applications/qv4l2.desktop Multimedia

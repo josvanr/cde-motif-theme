@@ -1,0 +1,6 @@
+alignfiles widgets.jos.css ../gtk-3.16/widgets.jos.css
+vimdiff widgets.jos.css ../gtk-3.16/widgets.jos.css
+vim widgets.jos.css
+vim -O ../gtk-2.0/gtkrc widgets.jos.css 
+
+vim -O widgets.jos.css ../gtk-3.16/widgets.jos.css

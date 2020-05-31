@@ -1,0 +1,11 @@
+combobox button arrow
+{
+	min-width:15px;
+	min-height:6px;
+	background-image:-gtk-scaled(url("comboBoxBeam.png"));
+	background-size: 15px 6px;
+	background-repeat: no-repeat;
+	background-position: center;
+	margin:0px;
+	padding:0px;
+}

@@ -1,0 +1,12 @@
+See also scripts/readme.txt
+
+backdrops	CDE backdrop files
+gtk-2.0
+gtk-3.0 	this is a link to gtk-3.16, necessary (apparently) for the theme to be listed in gnome-tweak
+gtk-3.16 	
+gtk-3.20
+img		
+img2
+palettes 	CDE palette files (default Broica.dp)
+scripts 	scripts for generating theme and the cdepanel (CDE front panel app) itself
+xfwm4		xfce window decorations

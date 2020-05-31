@@ -1,0 +1,32 @@
+#D1D1D2 ts_color_2
+#999999 bg_color_2
+#4E4E4E bs_color_2
+#6A605A bs_color_2
+#828282 sel_color_2
+#EDA870 bg_color_1
+#3E7C8D sel_color_6
+#999999 bg_color_2
+#3D7B8C sel_color_6
+#3D7B8B sel_color_6
+#3C7888 sel_color_6
+#3C7889 sel_color_6
+#ADCED7 ts_color_6
+#244953 bs_color_6
+#A8988F sel_color_5
+#464D56 ts_color_3
+#8998AA bg_color_3
+#C6B2A8 bg_color_5
+#4992A7 bg_color_6
+#CAD1D9 sel_color_1
+#E7DEDA ts_color_5
+#
+kleuren in pixmaps gerelateerd aan kleuren in broicacolors
+daarna perl replace script in xpm: #D1D1D2 -> ts_color_2 etc
+
+xpmrc/ : de orginele pixmaps, zonder ts_color codes erin
+
+
+run mapcolors from pycde/xpm
+
+
+nog de pagerbuttons codes goed

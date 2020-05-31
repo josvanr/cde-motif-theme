@@ -1,0 +1,25 @@
+#XFCE Themerc for CDE Palette: /home/jos/.config/CdePanel/palettes/DEC.dp
+active_text_color=#000000
+inactive_text_color=#ffffff
+button_offset=0
+button_spacing=0
+full_width_title=true
+maximized_offset=0
+shadow_delta_height=0
+shadow_delta_width=0
+shadow_delta_x=0
+shadow_delta_y=0
+shadow_opacity=0
+show_app_icon=false
+title_horizontal_offset=1
+title_shadow_active=false
+title_shadow_inactive=false
+title_vertical_offset_active=2.5
+title_vertical_offset_inactive=2.5
+active_color_1=#cec2bb
+active_hilight_1=#ebe6e3
+active_shadow_1=#726b67
+inactive_color_1=#6c8293
+inactive_hilight_1=#bdc7cf
+inactive_shadow_1=#364149
+    
