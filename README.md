@@ -1,3 +1,7 @@
+20221218: Please see https://www.opendesktop.org/p/1231025 for a newer version
+--------------------------------------------------------------------------------------------------
+
+
 Gtk2 / Gtk3 theme mimicking CDE / Motif and Front panel app
 'An elegant desktop, from a more... civilzed age.' ;)
 
